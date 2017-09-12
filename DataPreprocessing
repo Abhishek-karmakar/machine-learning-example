@@ -1,5 +1,30 @@
-1.> Prepare the data. 
-	In every dataset. There is dependent data and independent data. 
-	Using a machine learning model we will try to use the independent data to predict the outcome of the dependent data. 
-	We will do it for all the machine learning models. 
-	Try to make a template so that you can use it to create PreProcess data from all the machine learning models. 
+Data Preprocessing ToDos
+------------------------
+
+1.> Get the dataset
+
+	- In every dataset. There is dependent data and independent data. 
+	- Using a machine learning model we will try to use the independent data to predict the outcome of the dependent data. 
+	- We will do it for all the machine learning models. 
+	- Try to make a template so that you can use it to create PreProcess data from all the machine learning models. 
+
+
+2.> Import the libraries
+
+
+3.> Import the Dataset
+
+
+4.> Missing Data
+
+
+5.> Categorical Data
+
+
+6.> Splitting the dataset into the Training set and Test set
+
+
+7.> Feature Scaling 
+
+
+8.> Data Preprocessing Template
