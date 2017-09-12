@@ -116,7 +116,31 @@ Data Preprocessing ToDos
 
 
 6.> Splitting the dataset into the Training set and Test set
+	
+	- Machine learning is about an algorithms / model that will learn from the data to make predictions or other machine learning goals.
+	- If a machine learning model learns too much that might not be very good. Idea is to keep it generalised.  
+	- In any data learning model, split the dataset into two sets. Training Set & Test set.
+	- Training set - from where the algorithm will learn.   
+	- Test set - where we test the algorithm / model
+	- Training an Test should not be very different.
+	- Generally 20-30% should be chosen as a test size. out of 10, 2 observation as test set and 8 as Train set. Yeah, get more training done.   
+	- Overfitting is when a ML algo learns too much. This needs to be regulated. 
 
+	- Python : Splitting the dataset into the Training and Test set    
+		#Python : Splitting the dataset into the Training and Test set
+		from sklearn.cross_validation import train_test_split
+		x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size = 0.2, random_state = 0) #define the variable at the same time
+
+	- R : Splitting the dataset into the training set and test set.
+		install.packages('caTools') # to install the package
+		library(caTools) # to use the library in the current program
+		set.seed(123)
+		split = sample.split(dataset$Purchased, SplitRatio = 0.8)
+		training_set = subset(dataset, split == TRUE) #training set to true
+		test_set = subset(dataset, split == FALSE) #test set to false
+
+
+		
 
 7.> Feature Scaling 
 
