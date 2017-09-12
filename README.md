@@ -1,12 +1,9 @@
----------------------------
+
 Machine-learning-examples
----------------------------
 
-Some work on machine-learning using R, Python , Rstudio and Anaconda
+Quick start-up on machine-learning using R, Python , Rstudio and Anaconda(for Python). Following are a very basic , concise and essential steps to run prediction models on any data.  
 
----------------------
 Setup the environment.
----------------------
 
 	Step1 - Download and install R. 
 		- sudo nano /etc/apt/sources.list
@@ -21,14 +18,13 @@ Setup the environment.
 	Step3 - Download and install Anaconda for python & Start Anaconda
 		- type "anaconda-navigator" in the terminal.
 
-----------------------
+
 Get the data sets 
----------------------- 
+
 	https://www.superdatascience.com/machine-learning/
 
-------------------------
-Data Preprocessing ToDos
-------------------------
+
+Data Preprocessing ToDo's
 
 1.> Get the dataset
 
@@ -127,22 +123,37 @@ Data Preprocessing ToDos
 	- Overfitting is when a ML algo learns too much. This needs to be regulated. 
 
 	- Python : Splitting the dataset into the Training and Test set    
-		#Python : Splitting the dataset into the Training and Test set
-		from sklearn.cross_validation import train_test_split
-		x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size = 0.2, random_state = 0) #define the variable at the same time
+		- #Python : Splitting the dataset into the Training and Test set
+		- from sklearn.cross_validation import train_test_split
+		- x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size = 0.2, random_state = 0) #define the variable at the same time
 
 	- R : Splitting the dataset into the training set and test set.
-		install.packages('caTools') # to install the package
-		library(caTools) # to use the library in the current program
-		set.seed(123)
-		split = sample.split(dataset$Purchased, SplitRatio = 0.8)
-		training_set = subset(dataset, split == TRUE) #training set to true
-		test_set = subset(dataset, split == FALSE) #test set to false
-
-
+		- install.packages('caTools') # to install the package
+		- library(caTools) # to use the library in the current program
+		- set.seed(123)
+		- split = sample.split(dataset$Purchased, SplitRatio = 0.8)
+		- training_set = subset(dataset, split == TRUE) #training set to true
+		- test_set = subset(dataset, split == FALSE) #test set to false
 		
-
 7.> Feature Scaling 
+	- Two Columns Age and Salary are numericals and the values are not on the same scale. 
+	- Not having the same scale will create some issues with the model
+	- Euclidean Distance between two points P1 & P2 =  Squared root of the sum of the sqared coordinates. 
+	- Euclidean Distance in this case will be dominated by the bigger component. 
+	- Either can use Standardisation or Normalization to scale the data.
+
+	- Python - Feature Scaling
+		- #Feature Scaling
+		- from sklearn.preprocessing import StandardScaler
+		- sc_X = StandardScaler()
+		- x_train = sc_X.fit_transform(x_train)
+		- x_test = sc_X.transform(x_test)
+
+	- R - Feature Scalling 
+		#feature scaling
+		- training_set[,2:3] = scale(training_set[,2:3])
+		- test_setp[, 2:3] = scale(test_set, 2:3)
+		# the above statement will give an error X must be numeric so you need to exclide feature scaling from non numeric columns
 
 
 8.> Data Preprocessing Template
