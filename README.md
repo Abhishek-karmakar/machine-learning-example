@@ -21,7 +21,7 @@ Setup the environment.
 
 Get the data sets 
 
-	https://www.superdatascience.com/machine-learning/
+	https://docs.google.com/spreadsheets/d/1kapX-DfdJtDLlF9jIaLdlaLDU5yBdhE2WhP94Uv_LcE/edit?usp=sharing
 
 
 Data Preprocessing ToDo's
