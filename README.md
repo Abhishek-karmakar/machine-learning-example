@@ -8,18 +8,18 @@ Some work on machine-learning using R, Python , Rstudio and Anaconda
 Setup the environment.
 ---------------------
 
-Step1 - Download and install R. 
-	- sudo nano /etc/apt/sources.list
-	- Add the following line to the list. 
-		deb https://ftp.iitm.ac.in/cran/bin/linux/ubuntu xenial/
-	- sudo apt-get update
-	- sudo apt-get install r-base
+	Step1 - Download and install R. 
+		- sudo nano /etc/apt/sources.list
+		- add the following line to the list. 
+			deb https://ftp.iitm.ac.in/cran/bin/linux/ubuntu xenial/
+		- sudo apt-get update
+		- sudo apt-get install r-base
 
-Step2 - Install RSudio
-	- Download and install on Ubuntu " https://download1.rstudio.org/rstudio-xenial-1.0.153-amd64.deb
+	Step2 - Install RSudio
+		- download and install on Ubuntu " https://download1.rstudio.org/rstudio-xenial-1.0.153-amd64.deb
 
-Step3 Start Anaconda
-	- type "anaconda-navigator" in the terminal.
+	Step3 - Start Anaconda
+		- type "anaconda-navigator" in the terminal.
 
 ----------------------
 Get the data sets 
@@ -62,9 +62,25 @@ Data Preprocessing ToDos
 		#import the dataset
 		dataset = read.csv('Data.csv')
 
-
-
 4.> Missing Data
+	- Handle the case of missing data. 
+		- one option is to remove the whole row. but thats not good as it contains of crucial data. 
+		- option two is to take a mean of values in the column.
+		- we'll take option two. Find the mean of the values and fill empty data with that value.  
+	- Finding mean with Python.
+		- #taking care of missing data. 
+		from sklearn.preprocessing import Imputer #to take care of the missing data.
+		imputer = Imputer(missing_values= 'NaN', strategy = 'mean', axis = 0) #check what parameters are required to be present here 
+		#fit the imputer object in the matrix
+		imputer = imputer.fit(X[:,1:3])
+
+		#replace the missing data by the mean of value X
+		X[:, 1:3] = imputer.transform(X[:, 1:3]) #method to replace the nan value with the mean of the column.
+
+		#we can take multiple strategies to remove nan values, Mean, Median or most frequently occuring.
+	- Finding mean with R
+		dataset$Age = ifelse(is.na(dataset$Age),ave(dataset$Age, FUN = function(x) mean(x,na.rm = TRUE)),dataset$Age)
+
 
 
 5.> Categorical Data
