@@ -17,3 +17,10 @@ Step2 - Install RSudio
 Step-3 Start Anaconda
 type "anaconda-navigator" in the terminal.
 
+// Data PreProcessing
+Prepare the dataset for any Machine Learning model.
+
+// get the data sets from 
+https://www.superdatascience.com/machine-learning/
+
+// add the dataset to the proper folder.
