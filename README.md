@@ -50,6 +50,18 @@ Data Preprocessing ToDos
 
 
 3.> Import the Dataset
+	
+	- in Python , import a dataset, declare the working directory and specify the data in the variables
+		dataset = pd.read_csv('Data.csv')
+		#matrix of features and dependent variable vector
+		# we are going to create a matrix of 3 independent variable. 
+		X = dataset.iloc[:, :-1].values # ":" means take all the columns except the last one. 
+		# create the dependent variable venctor
+		Y = dataset.iloc[:,3].values
+	- in R
+		#import the dataset
+		dataset = read.csv('Data.csv')
+
 
 
 4.> Missing Data
