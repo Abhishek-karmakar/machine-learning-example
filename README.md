@@ -1,5 +1,7 @@
-# machine-learning-example
+Machine-learning-examples
+
 Some work on machine-learning using R, Python , Rstudio and Anaconda
+
 ---------------------
 Setup the environment.
 ---------------------
@@ -12,11 +14,11 @@ Step1 - Download and install R.
 	- sudo apt-get install r-base
 
 Step2 - Install RSudio
-	- Download on Ubuntu " https://download1.rstudio.org/rstudio-xenial-1.0.153-amd64.deb
-	- Install.
+	- Download and install on Ubuntu " https://download1.rstudio.org/rstudio-xenial-1.0.153-amd64.deb
 
-Step-3 Start Anaconda
+Step3 Start Anaconda
 	- type "anaconda-navigator" in the terminal.
+
 ----------------------
 Get the data sets 
 ---------------------- 
