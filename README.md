@@ -14,3 +14,6 @@ Step2 - Install RSudio
 1.> Download on Ubuntu " https://download1.rstudio.org/rstudio-xenial-1.0.153-amd64.deb
 2.> Install.
 
+Step-3 Start Anaconda
+type "anaconda-navigator" in the terminal.
+
