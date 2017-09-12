@@ -39,6 +39,13 @@ Data Preprocessing ToDos
 
 
 2.> Import the libraries
+	- Spread in two parts. Python and R
+	- Import Library in Python. 
+		import numpy as np #name of the linrary i numpy and shortcut is np
+		import matplotlib.pyplot as plt # help to plot nice charts. Intuitive and useful tools. 
+		import pandas as pd # library to import and manage datasets.
+	- Import Libraries in R
+		Dont need to import in the library, Present in the packages tab of RStudio
 
 
 3.> Import the Dataset
