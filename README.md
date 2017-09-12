@@ -39,6 +39,7 @@ Data Preprocessing ToDos
 
 
 2.> Import the libraries
+
 	- Spread in two parts. Python and R
 	- Import Library in Python. 
 		import numpy as np #name of the linrary i numpy and shortcut is np
