@@ -18,7 +18,7 @@ Setup the environment.
 	Step2 - Install RSudio
 		- download and install on Ubuntu " https://download1.rstudio.org/rstudio-xenial-1.0.153-amd64.deb
 
-	Step3 - Start Anaconda
+	Step3 - Download and install Anaconda for python & Start Anaconda
 		- type "anaconda-navigator" in the terminal.
 
 ----------------------
@@ -62,7 +62,10 @@ Data Preprocessing ToDos
 		#import the dataset
 		dataset = read.csv('Data.csv')
 
-4.> Missing Data
+4.> Handle missing Data 
+
+	- Handle missing data by finding the mean, median or most frequent occurance in the column.
+
 	- Handle the case of missing data. 
 		- one option is to remove the whole row. but thats not good as it contains of crucial data. 
 		- option two is to take a mean of values in the column.
@@ -84,6 +87,32 @@ Data Preprocessing ToDos
 
 
 5.> Categorical Data
+
+	- Encode categorical variables. 2 categorical variales. In our dataset examples Countries & Purchased.
+	- Since ML deals with maths we cannot keep Text in our equations , therefore we need to encode the categorical variables into numbers.
+	- Dummy Encoding lets you create number of different columns based on number of categories. use OnHotEncoder to do this.
+
+	- how to do that in Python
+		- #import the library to encode categorical data
+		- from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+		- labelencoder_X = LabelEncoder()
+		- X[:, 0] = labelencoder_X.fit_transform(X[:, 0]) #we take all the columns of the first column country of our matrix
+
+		- # we cannot compare the values because the value of the number does not represent anything. 
+		- onehotencoder = OneHotEncoder(categorical_features =[0])
+		- X=onehotencoder.fit_transform(X).toarray()
+
+		- #Do the same for age
+		- labelencoder_Y = LabelEncoder()
+		- X[:, 0] = labelencoder_y.fit_transform(Y[:, 0])  
+	
+	- How to do this in R
+		- dataset$Country = factor(dataset$Country,
+                         levels = c('France','Spain','Germany'),
+                         labels = C(1, 2, 3))
+		- dataset$Country = factor(dataset$Country,
+                         levels = c('Yes','No'),
+                         labels = C(1, 0))
 
 
 6.> Splitting the dataset into the Training set and Test set
