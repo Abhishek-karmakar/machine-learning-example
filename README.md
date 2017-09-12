@@ -136,6 +136,7 @@ Data Preprocessing ToDo's
 		- test_set = subset(dataset, split == FALSE) #test set to false
 		
 7.> Feature Scaling 
+
 	- Two Columns Age and Salary are numericals and the values are not on the same scale. 
 	- Not having the same scale will create some issues with the model
 	- Euclidean Distance between two points P1 & P2 =  Squared root of the sum of the sqared coordinates. 
@@ -157,4 +158,52 @@ Data Preprocessing ToDo's
 
 
 8.> Data Preprocessing Template
+	
+	- Make the Python & R Data Preposessing template so that every projet owner knows what needs to be done. 
+	- Python
+		# Data Preprocessing Template
+
+		# Importing the libraries
+		import numpy as np
+		import matplotlib.pyplot as plt
+		import pandas as pd
+
+		# Importing the dataset
+		dataset = pd.read_csv('Data.csv')
+		X = dataset.iloc[:, :-1].values
+		y = dataset.iloc[:, 3].values
+
+		# Splitting the dataset into the Training set and Test set
+		from sklearn.cross_validation import train_test_split
+		X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+
+		# Feature Scaling
+		"""from sklearn.preprocessing import StandardScaler
+		sc_X = StandardScaler()
+		X_train = sc_X.fit_transform(X_train)
+		X_test = sc_X.transform(X_test)
+		sc_y = StandardScaler()
+		y_train = sc_y.fit_transform(y_train)"""
+
+	- R
+		# Data Preprocessing Template
+
+		# Importing the dataset
+		dataset = read.csv('Data.csv')
+
+		# Splitting the dataset into the Training set and Test set
+		# install.packages('caTools')
+		library(caTools)
+		set.seed(123)
+		split = sample.split(dataset$DependentVariable, SplitRatio = 0.8)
+		training_set = subset(dataset, split == TRUE)
+		test_set = subset(dataset, split == FALSE)
+
+		# Feature Scaling
+		# training_set = scale(training_set)
+		# test_set = scale(test_set)
+
+
+
+Enjoy manking models !! :-) 
 
